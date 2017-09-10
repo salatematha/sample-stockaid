@@ -1,0 +1,10 @@
+Symbol
+<md-input-container>
+  <input mdInput placeholder="" [mdAutocomplete]="auto" [formControl]="stockCtrl">
+</md-input-container>
+
+<md-autocomplete #auto="mdAutocomplete">
+  <md-option (onSelectionChange)="selected($event, stock)" *ngFor="let stock of filteredstocks | async" [value]="stock">
+    {{ stock }}
+  </md-option>
+</md-autocomplete>

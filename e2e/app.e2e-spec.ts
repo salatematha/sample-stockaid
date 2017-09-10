@@ -1,10 +1,10 @@
-import { SampleStockaidPage } from './app.po';
+import { StockaidPage } from './app.po';
 
-describe('sample-stockaid App', () => {
-  let page: SampleStockaidPage;
+describe('stockaid App', () => {
+  let page: StockaidPage;
 
   beforeEach(() => {
-    page = new SampleStockaidPage();
+    page = new StockaidPage();
   });
 
   it('should display welcome message', () => {

@@ -1,0 +1,38 @@
+<div>
+  <md-paginator #paginator [length]="exampleDatabase.data.length" [pageIndex]="0" [pageSize]="10" [pageSizeOptions]="[5, 10, 25, 100]">
+  </md-paginator>
+  <md-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+
+    <ng-container mdColumnDef="open">
+      <md-header-cell *mdHeaderCellDef> open </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.open}} </md-cell>
+    </ng-container>
+    <ng-container mdColumnDef="high">
+      <md-header-cell *mdHeaderCellDef> high </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.high}} </md-cell>
+    </ng-container>
+    <ng-container mdColumnDef="low">
+      <md-header-cell *mdHeaderCellDef> low </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.low}} </md-cell>
+    </ng-container>
+    <ng-container mdColumnDef="close">
+      <md-header-cell *mdHeaderCellDef> close </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.close}} </md-cell>
+    </ng-container>
+    <ng-container mdColumnDef="label">
+      <md-header-cell *mdHeaderCellDef> label </md-header-cell>
+      <md-cell *mdCellDef="let row"> {{row.label}} </md-cell>
+    </ng-container>
+
+
+
+
+
+    <md-header-row *mdHeaderRowDef="displayedColumns"></md-header-row>
+    <md-row *mdRowDef="let row; columns: displayedColumns;"></md-row>
+  </md-table>
+</div>
