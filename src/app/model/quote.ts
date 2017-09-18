@@ -1,0 +1,32 @@
+export interface Quote {
+    symbol: any;
+    companyName: any;
+    primaryExchange: any;
+    sector: any;
+    calculationPrice: any;
+    latestPrice: any;
+    latestSource: any;
+    latestTime: any;
+    latestUpdate: any;
+    latestVolume: any;
+    iexRealtimePrice: any;
+    iexRealtimeSize: any;
+    iexLastUpdated: any;
+    delayedPrice: any;
+    delayedPriceTime: any;
+    previousClose: any;
+    change: any;
+    changePercent: any;
+    iexMarketPercent: any;
+    iexVolume: any;
+    avgTotalVolume: any;
+    iexBidPrice: any;
+    iexBidSize: any;
+    iexAskPrice: any;
+    iexAskSize: any;
+    marketCap: any;
+    peRatio: any;
+    week52High: any;
+    week52Low: any;
+    ytdChange: any;
+}

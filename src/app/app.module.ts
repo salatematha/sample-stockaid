@@ -3,6 +3,7 @@ import { NgModule } from '@angular/core';
 
 import { AppComponent } from './app.component';
 import { BarService } from './service/bar.service'
+import { WebSocketsService } from './service/web-sockets.service'
 //material
 import { platformBrowserDynamic } from '@angular/platform-browser-dynamic';
 
@@ -50,6 +51,9 @@ import { BarChartComponent } from './bar-chart/bar-chart.component';
 
 //for primeng
 import { ChartModule } from 'primeng/primeng';
+import { LiveQuoteComponent } from './live-quote/live-quote.component';
+import { QuoteComponent } from './quote/quote.component';
+import { QuoteService } from "./service/quote.service";
 
 @NgModule({
   exports: [
@@ -102,7 +106,9 @@ export class MaterialModule { }
     AppComponent,
     SymbolComponent,
     BarTableComponent,
-    BarChartComponent
+    BarChartComponent,
+    LiveQuoteComponent,
+    QuoteComponent
   ],
   imports: [
     BrowserModule,
@@ -114,7 +120,7 @@ export class MaterialModule { }
     ReactiveFormsModule,
     PrimeModule
   ],
-  providers: [BarService, SymbolService],
+  providers: [BarService, SymbolService, WebSocketsService, QuoteService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

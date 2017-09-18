@@ -2,5 +2,24 @@
   flex: 1 1 auto;
 }
 body {
-    padding: 0 0 0 0 
+    padding: 0 0 0 0 ;
+    flex-direction:column;
+
 }
+md-sidenav {
+  width: 400px;
+    background-color:#7e57c2; /* #935CFA;*/
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    vertical-align:middle;
+    color: white;
+}
+md-tab-group {
+ flex:1;
+    min-height: 87vh;
+}
+
+.bottom {
+  flex: 0 0 auto;
+}
+

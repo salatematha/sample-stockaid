@@ -1,39 +1,41 @@
 <md-toolbar color="primary">
-    <span>StockAid</span>
+    <button md-button><md-icon>home</md-icon>StockAid</button>
+    <button md-button>Dashboard</button>
 
     <!-- This fills the remaining space of the current row -->
     <span class="example-fill-remaining-space"></span>
     <!-- <md-slide-toggle  [(ngModel)]="displayChart">Display Chart</md-slide-toggle>&nbsp;&nbsp; -->
 
-    <span><app-symbol (selectedStock)="onSelectedStockChange($event)">></app-symbol></span>
 </md-toolbar>
 
 
 
-<md-tab-group>
-    <!-- <md-tab label="Table">
-        <app-bar-table [stsymbol]="selectedStock"></app-bar-table>
-    </md-tab> -->
-    <md-tab *ngFor="let inter of chartInterval.reverse()" label="{{inter}}">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="inter"></app-bar-chart>
-    </md-tab>
-    <!-- <md-tab label="5Y">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="'5y'"></app-bar-chart>
-    </md-tab>
-    <md-tab label="27">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="'2y'"></app-bar-chart>
-    </md-tab>
-    <md-tab label="1y">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="'1y'"></app-bar-chart>
-    </md-tab>
-    <md-tab label="ytd">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="'ytd'"></app-bar-chart>
-    </md-tab>
-    <md-tab label="6m">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="'6m'"></app-bar-chart>
-    </md-tab>
-    <md-tab label="3m">
-        <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="'3m'"></app-bar-chart>
-    </md-tab> -->
 
-</md-tab-group>
+<!-- <app-live-quote>
+</app-live-quote> -->
+
+
+
+<md-sidenav-container>
+    <md-sidenav mode="side" opened="true">
+        <app-symbol (selectedStock)="onSelectedStockChange($event)">></app-symbol>
+        <app-quote [stsymbol]="selectedStock">
+        </app-quote>
+    </md-sidenav>
+    <md-tab-group>
+        <md-tab label="Table">
+            <app-bar-table [stsymbol]="selectedStock"></app-bar-table>
+        </md-tab>
+        <md-tab *ngFor="let inter of chartInterval.reverse()" label="{{inter}}">
+            <app-bar-chart [stsymbol]="selectedStock" [chartInterval]="inter"></app-bar-chart>
+        </md-tab>
+
+
+    </md-tab-group>
+</md-sidenav-container>
+
+<md-toolbar color="primary" class="bottom">
+    <span style="font-size: 13px">https://iextrading.com/api-exhibit-a</span>
+
+
+</md-toolbar>
