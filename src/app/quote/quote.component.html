@@ -1,29 +1,29 @@
-<md-grid-list cols="4" rowHeight="58px">
+<md-grid-list cols="3" rowHeight="40px">
   <md-grid-tile>
-    Company Name
+    Symbol
   </md-grid-tile>
   <md-grid-tile>
-    LatestPrice
+    Price
   </md-grid-tile>
   <md-grid-tile>
-    Previous Close
+    Change
   </md-grid-tile>
-  <md-grid-tile>
+  <!-- <md-grid-tile>
     Volume
-  </md-grid-tile>
+  </md-grid-tile> -->
 </md-grid-list>
 
-<md-grid-list *ngFor='let m of quotes' cols="4" rowHeight="58px">
+<md-grid-list *ngFor='let m of quotes' cols="3" rowHeight="40px">
   <md-grid-tile> {{m.symbol}}
   </md-grid-tile>
   <md-grid-tile>
-    {{m.latestPrice}}
+    {{m.latestPrice| number:'.1-2'}}
   </md-grid-tile>
-  <md-grid-tile>
-    {{m.previousClose}}
+  <md-grid-tile [ngClass]="{'positive': m.changePercent>0, 'negative': m.changePercent<0}">
+    {{m.changePercent*100 | number:'.1-3'}}%
   </md-grid-tile>
-  <md-grid-tile>
-    <!-- <md-grid-tile [style.background]="'#DDBDF1'"> -->
+  <!-- <md-grid-tile>
+     <md-grid-tile [style.background]="'#DDBDF1'">
     {{m.avgTotalVolume}}
-  </md-grid-tile>
+  </md-grid-tile> -->
 </md-grid-list>

@@ -4,3 +4,17 @@ md-grid-tile {
   font-size: 12px;
 
 }
+
+.positive {
+    border-radius: 20%;
+    background: #73AD21;
+}
+.negative {
+    border-radius: 20%;
+    background: #E94340;
+}
+
+md-grid-list{
+    padding: 2px;
+  margin: 4px;
+}
